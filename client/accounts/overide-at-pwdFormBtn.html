@@ -1,5 +1,52 @@
 <template name="override-atPwdFormBtn">
-  <button type="submit" class="btn-primary" id="at-btn">
+  <button type="submit" class="btn btn-primary" id="at-btn">
     {{buttonText}}
   </button>
+</template>
+
+<template name="atTextInputNew">
+  <div class="at-input {{#if isValidating}}validating{{/if}} {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
+    {{#if showLabels}}
+      <label for="at-field-{{_id}}" class="form-label">
+        {{displayName}} {{#unless required}}{{optionalText}}{{/unless}}
+      </label>
+    {{/if}}
+    <input type="{{type}}" class="form-control form-control-lg" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
+    {{#if hasIcon}}
+        <span class="{{iconClass}}"></span>
+    {{/if}}
+    {{#if hasError}}
+      <span>{{errorText}}</span>
+    {{/if}}
+  </div>
+</template>
+
+<template name="atCheckboxInputNew">
+  <div class="at-input">
+      <input type="{{type}}" class="form-check-input" id="at-field-{{_id}}" name="at-field-{{_id}}" {{disabled}}>
+      <label for="at-field-{{_id}}" class="form-check-label">{{displayName}}</label>
+  </div>
+</template>
+
+<template name="atSelectInputNew">
+  <div class="at-input">
+    <label for="at-field-{{_id}}">{{displayName}}</label>
+    <select id="at-field-{{_id}}" name="at-field-{{_id}}" class="form-select">
+      {{#each values}}
+        <option value="{{value}}">{{text}}</option>
+      {{/each}}
+    </select>
+  </div>
+</template>
+
+<template name="atRadioInputNew">
+  <div class="at-input">
+    <label>{{displayName}}</label>
+  </div>
+  {{#each values}}
+    <div class="at-input">
+      <input id="at-field-{{id}}-choice-{{value}}" class="form-check-input" type="radio" name="at-field-{{id}}" value={{value}}>
+      <label class="form-check-label">{{text}}</label>
+    </div>
+  {{/each}}
 </template>

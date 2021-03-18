@@ -22,6 +22,14 @@ FlowRouter.route('/albums', {
     }
 });
 
+// weddings album
+FlowRouter.route('/albums/weddings', {
+    name: 'weddings',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "weddings" });
+    }
+});
+
 // about me
 FlowRouter.route('/about', {
     name: 'about',

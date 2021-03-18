@@ -1,17 +1,24 @@
 <template name="about">
+    <div style="background-color: #faf3e6; font-family:Sofia">
     <header class="masthead">
         <p class="masthead-intro">Yami Sukehiro</p>
         <h1 class="masthead-heading">Photographer</h1>
       </header>
-      <div class="middle">
+      <div class="sidebar">
         <section class="introduction-section">
           <div class="container">
-          <h1>Introduction</h1>
-          <h5>Hello! My name is Kedar, rhymes with cheddar, and I'm a <b>photographer</b> and <b>front end dev</b> intern at <a href="http://dirigiblestudio.com/">Dirigible Studio</a> here in Madison, Wisco.</h5>
-          
-          <p>I think it's important to help make the internet a <strong>beautiful place</strong>, whether that be through words, photography, or web design, and I'm excited to have found a community at <a href="https://www.thinkful.com/">Thinkful</a> that shares my belief.</p>
-          
-          <p>I also think it's important to push yourself and <strong>learn</strong> one new thing every day, no matter what that may be. Did you know a duel between three people is called a <a href="http://www.futilitycloset.com/wp-content/uploads/2010/12/2010-12-16-truel.jpg">truel?</a></p>
+          <h1>Introduction</h1><br>
+          <div id="sidebar">
+            <div class="col">
+                <h5>Hello! My name is Kedar, rhymes with cheddar, and I'm a <b>photographer</b> and <b>front end dev</b> intern at <a href="http://dirigiblestudio.com/">Dirigible Studio</a> here in Madison, Wisco.</h5>
+            <p>I think it's important to help make the internet a <strong>beautiful place</strong>, whether that be through words, photography, or web design, and I'm excited to have found a community at <a href="https://www.thinkful.com/">Thinkful</a> that shares my belief.</p>
+            
+            <p>I also think it's important to push yourself and <strong>learn</strong> one new thing every day, no matter what that may be. Did you know a duel between three people is called a <a href="http://www.futilitycloset.com/wp-content/uploads/2010/12/2010-12-16-truel.jpg">truel?</a></p>
+            </div>
+            <div  class="col">
+                <img src="https://images.alphacoders.com/900/thumbbig-900567.png">
+            </div>
+          </div>
           </div>
         </section>
       
@@ -28,15 +35,7 @@
       
         <section class="questions-section">
           <div class="container">
-          <h1>More About Me</h1>
-          <h2>What are your favorite hobbies?</h2>
-          <h5>I love to explore new cities, take photographs, eat tacos, catnap with my cat, bike to big lakes, hold hands, play video games, dance in hay lofts, spend weekends with my grandpa, drink good <a href="http://www.proof66.com/whiskey/eagle-rare-10yr-bourbon.html">whiskey</a>, and sit outside all night on porches.</h5>
-      
-          <h2>What's your dream job?</h2>
-          <p>A professional turtle racer. Just kidding, I would love to be a full-time <strong>creative</strong> who's given an array of responsibilities in front-end work, photography, design, and whatever else comes my way.</p>
-      
-          <h2>What music have you been listening to lately?</h2>
-          <p>My husband and I recently roadtripped through Arizona listening to the band <a href="http://houndmouth.com/">Houdmouth</a>. I don't know what it is about them, but they make you want to keep driving and driving. Start with the song <a href="https://www.youtube.com/watch?v=Y8wifV5RYr8">"Sedona"</a> first.</p>
+              {{> contactForm}}
           </div>
         </section>
       
@@ -54,4 +53,139 @@
           <p>Cover Image via <a href="http://www.kedarjoyner.com">Kedar Joyner Photography</a></p>
       </div>
         </footer>
+    </div>
+        <style>
+          /* about me */
+          h5{
+              font-size: 1em;
+          }
+          .masthead-heading,
+.masthead-intro,
+.content-footer {
+  text-align: center;
+}
+
+.masthead {
+  padding: 11em 0;
+  background-image: url('https://images.unsplash.com/photo-1512716679859-da19b4af9c38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center
+}
+
+.masthead-intro {
+  /* Text Declarations */
+  margin-bottom: 0.1em;
+  font-family: "Gentium Book Basic," Georgia, serif;
+  font-size: 4em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+
+.masthead-heading {
+  /*Layout Declarations */
+  margin-top: -0.2em;
+  /* Typography Declarations */
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: light;
+  font-size: 1.5em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* Text Declarations for Sections */
+
+.introduction-section > p,
+.location-section > p,
+.content-footer > p,
+.questions-section > p {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Section Styling */
+
+.introduction-section,
+.location-section,
+.questions-section {
+text-align: justify;
+font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+.questions-section > h2 {
+  /*Typography Declarations */
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 1.1 em;
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Footer Styling */
+
+.fa-stack fa-lg {
+  display: inline-block;
+}
+
+.footer-container > p {
+  color: white;
+}
+
+.content-footer {
+  padding: 2em 0;
+  margin-top: 3em;
+  background: #2b3840;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:link {
+  color: #B69760;
+}
+
+a:visited {
+  color: #B69760;
+}
+
+
+@media only screen and (max-width: 571px) {
+    .masthead {
+        padding: 5em 0;
+    }
+    .masthead-intro {
+        font-size: 3em;
+    }
+    .masthead-heading {
+        font-size: .5em;
+    }
+    .container {
+        padding: 0 3em;
+    }
+    .footer-container {
+        padding: 0 3em;
+  }
+}
+#sidebar {
+  /* margin-top: 6.5%; */
+  display: flex;
+  
+  
+}
+#sidebar img{
+    width: 100%;
+  top: 1px;
+  height: 100%;
+  max-height: 440px;
+  position: relative;
+  margin-left: 8%;
+}
+        </style>
 </template>

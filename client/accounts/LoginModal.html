@@ -1,8 +1,11 @@
 <!-- we override the blaze extensions using aldeed teplate extension -->
 <template name="LoginModal">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
     {{#if $not currentUser}}
     <!-- if user is logged in don't show -->
-        <div class="login-modal {{$.Session.get 'nav-toggle'}}">
+        <div class="login-modal {{$.Session.get 'nav-toggle'}}" style="font-family: Sofia;">
             <!-- get the session variable nav-toggle -->
             <i class="fa fa-close close-login"></i>
             {{> atForm}}
