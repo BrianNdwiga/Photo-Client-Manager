@@ -1,0 +1,11 @@
+<!-- we override the blaze extensions using aldeed teplate extension -->
+<template name="LoginModal">
+    {{#if $not currentUser}}
+    <!-- if user is logged in don't show -->
+        <div class="login-modal {{$.Session.get 'nav-toggle'}}">
+            <!-- get the session variable nav-toggle -->
+            <i class="fa fa-close close-login"></i>
+            {{> atForm}}
+        </div>
+    {{/if}}
+</template>
