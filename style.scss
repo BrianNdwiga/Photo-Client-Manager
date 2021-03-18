@@ -1,11 +1,12 @@
 @import 'sass/_normalize.scss';
 @import 'sass/_base.scss';
-
 html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -43,7 +44,8 @@ input[type="password"] {
     padding: 10px 10px 7px;
 }
 
-.btn, button {
+.btn,
+button {
     background: $action;
     text-transform: uppercase;
     text-decoration: none;
@@ -75,7 +77,6 @@ input[type="password"] {
     }
 }
 
-
 .header {
     background: white;
     border-bottom: 1px solid $dgrey;
@@ -100,14 +101,16 @@ input[type="password"] {
     ul {
         list-style: none;
         display: flex;
-        padding: 0;
+        padding: 10px;
     }
-    li + li {
-        margin-left: 20px;
+    li+li {
+        margin-left: 80px;
     }
     a {
         text-decoration: none;
-        border-bottom: 2px solid transparent;
+        font-weight: normal;
+        font-size: x-large;
+        border-bottom: transparent;
     }
 }
 
@@ -115,17 +118,7 @@ input[type="password"] {
     cursor: pointer;
 }
 
-
 // Homepage
-.billboard {
-    background-image: url('/met-stars.png'), linear-gradient(#202023, #19283f);
-    color: #FFF;
-    text-align: center;
-    border-bottom: 1px solid $dgrey;
-    padding: 40px 5%;
-}
-
-
 .app-layout {
     margin-left: 80px;
     min-height: 100vh;
@@ -147,9 +140,9 @@ input[type="password"] {
     border-right: solid 1px $dgrey;
     &:hover {
         width: 300px;
-        a > span {
+        a>span {
             opacity: 1;
-            transform: translate3d(0, 0,0);
+            transform: translate3d(0, 0, 0);
         }
     }
     a {
@@ -166,8 +159,8 @@ input[type="password"] {
             font-size: 2em;
             margin-right: 20px;
         }
-        > span {
-            transform: translate3d(20px, 0,0);
+        >span {
+            transform: translate3d(20px, 0, 0);
             opacity: 0;
             transition: background 0.3s ease;
         }
@@ -197,7 +190,8 @@ table {
     tr:nth-child(even) {
         background: #EEE
     }
-    td, th {
+    td,
+    th {
         text-align: left;
         padding: 10px 5px;
     }
@@ -211,7 +205,58 @@ table {
     }
 }
 
-.user_id {
+.user_id:hover {
     color: $blue;
     cursor: pointer;
+}
+
+.user-edit {
+    position: absolute;
+    left: -300px;
+    top: 0;
+    background: #FFF;
+    z-index: 10;
+    padding: 20px;
+    width: 280px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20);
+    @include card(2);
+    .close-edit-mode {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        font-size: 1.2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+.edit-mode .user-edit {
+    opacity: 1;
+}
+
+$small: 700px;
+.main-nav {
+    li+li {
+        margin-left: 80px;
+    }
+    a {
+        text-decoration: none;
+        font-weight: normal;
+        font-size: x-large;
+        border-bottom: transparent;
+    }
+    @media screen and (max-width: $small) {
+        li+li {
+            margin-left: 40px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: normal;
+            font-size: x-small;
+            border-bottom: transparent;
+        }
+    }
 }

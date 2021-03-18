@@ -1,0 +1,22 @@
+{
+    "name": "blaze-base",
+    "version": "1.0.0",
+    "description": "user management system",
+    "main": "routes.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BrianNdwiga/Photo-Client-Manager.git"
+    },
+    "author": "Brian",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BrianNdwiga/Photo-Client-Manager/issues"
+    },
+    "homepage": "https://github.com/BrianNdwiga/Photo-Client-Manager#readme",
+    "dependencies": {
+        "moment": "^2.29.1"
+    }
+}

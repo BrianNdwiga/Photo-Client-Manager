@@ -1,3 +1,8 @@
 <template name="Dashboard">
+    <!-- {{#if admin}} this uses the helper-->
+    {{#if isInRole 'admin'}}
     <h1 class="page-title">Dashboard</h1>
+    {{else}}
+    <h1>Not Authorized</h1>
+    {{/if}}
 </template>

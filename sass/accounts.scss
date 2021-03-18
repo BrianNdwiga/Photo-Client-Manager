@@ -1,5 +1,4 @@
 @import '_base.scss';
-
 .login-modal {
     position: fixed;
     border: solid 4px $dblue;
@@ -15,6 +14,7 @@
     &.open {
         opacity: 1;
         transform: translateX(-50%) scale(1);
+        position: relative;
     }
     h3 {
         margin-top: 0;

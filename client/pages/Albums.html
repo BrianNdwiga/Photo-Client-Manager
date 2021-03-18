@@ -1,0 +1,112 @@
+<template name="albums">
+  <div>
+    <div class="container">
+      <div class="toggle-bar">
+        <a class="icon icon--toggle" href="#" id="toggle-list"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="#9E9E9E" d="M15 5.5h70V32H15z" />
+            <g fill="none" stroke="#9E9E9E" stroke-miterlimit="10">
+              <path stroke-width="4" d="M26 38h47" />
+              <path stroke-width="2" d="M39 43h21M39 46h21" />
+            </g>
+            <g>
+              <path fill="#9E9E9E" d="M15 52.5h70V79H15z" />
+              <g fill="none" stroke="#9E9E9E" stroke-miterlimit="10">
+                <path stroke-width="4" d="M26 85h47" />
+                <path stroke-width="2" d="M39 90h21M39 93h21" />
+              </g>
+            </g></svg
+        ></a>
+        <a class="icon icon--toggle" href="#" id="toggle-collage"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path
+              fill="#9E9E9E"
+              d="M0 0h63.3v30H0zm68.3 0H100v30H68.3zM0 35h30v30H0zm70 0h30v30H70zm-35 0h30v30H35zM0 70h47.5v30H0zm52.5 0H100v30H52.5z"
+            /></svg
+        ></a>
+      </div>
+      <div id="layout" class="layout layout--collage">
+        <div class="image image--3-of-5">
+          <img
+            src="https://farm8.staticflickr.com/7597/17065579592_d0c02f2d60_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+        <div class="image image--2-of-5">
+          <img
+            src="https://farm8.staticflickr.com/7660/17066288161_4b06a3c512_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+        <div class="image image--3">
+          <img
+            src="https://farm9.staticflickr.com/8716/16983998745_64e16f04cd_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+        <div class="image image--3">
+          <img
+            src="https://farm9.staticflickr.com/8706/16745718269_8fa704df12_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+        <div class="image image--3">
+          <img
+            src="https://farm8.staticflickr.com/7653/16675511208_683c5d7aab_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>
+              This is a mock description of a recipe. Let's test out word
+              wrapping in our description. Also, what will happen if our
+              description is taller than our image. This will take a lot of text
+              to figure out, but it's important that this behaviour is well
+              known. La de da Lorem ipsum - How much more text is needed?
+              Probably just one more line. Well we need another line to push us
+              above the top of the image I guess. Oh - overflow!
+            </p>
+          </div>
+        </div>
+        <div class="image image--2-of-5">
+          <img
+            src="https://farm9.staticflickr.com/8627/16463695779_2351dbf893_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+        <div class="image image--3-of-5">
+          <img
+            src="https://farm9.staticflickr.com/8648/16374337157_722e04d363_z.jpg"
+          />
+          <div class="description">
+            <h1>Test Description</h1>
+            <p>This is a mock description of a recipe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("#toggle-list").click(function () {
+      $("#layout").removeClass("layout--collage").addClass("layout--list");
+    });
+
+    $("#toggle-collage").click(function () {
+      $("#layout").addClass("layout--collage").removeClass("layout--list");
+    });
+  </script>
+</template>
