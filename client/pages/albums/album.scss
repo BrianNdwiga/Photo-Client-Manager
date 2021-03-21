@@ -53,6 +53,7 @@ $margin-size: 1%;
             text-align: center;
         }
         p {
+            text-align: center;
             max-width: 80%;
             margin: 0 auto;
         }
@@ -114,7 +115,7 @@ $margin-size: 1%;
             img {
                 position: absolute;
                 height: 100%;
-                width: auto;
+                width: 100%;
             }
         }
     }

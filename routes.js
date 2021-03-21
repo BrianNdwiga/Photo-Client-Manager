@@ -1,8 +1,8 @@
 // Home Page
 FlowRouter.route('/', {
-    name: 'home',
+    name: 'gallery',
     action() {
-        BlazeLayout.render("HomeLayout", { main: "Home" });
+        BlazeLayout.render("HomeLayout", { main: "gallery" });
     }
 });
 
@@ -29,7 +29,48 @@ FlowRouter.route('/albums/weddings', {
         BlazeLayout.render("HomeLayout", { main: "weddings" });
     }
 });
-
+// birthday album
+FlowRouter.route('/albums/birthdays', {
+    name: 'birthdays',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "birthdays" });
+    }
+});
+// party album
+FlowRouter.route('/albums/party', {
+    name: 'party',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "parties" });
+    }
+});
+// funeral album
+FlowRouter.route('/albums/funeral', {
+    name: 'funeral',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "funerals" });
+    }
+});
+// shoots album
+FlowRouter.route('/albums/shoots', {
+    name: 'shoots',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "shoots" });
+    }
+});
+// family album
+FlowRouter.route('/albums/family', {
+    name: 'family',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "family" });
+    }
+});
+// events album
+FlowRouter.route('/albums/events', {
+    name: 'events',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "events" });
+    }
+});
 // about me
 FlowRouter.route('/about', {
     name: 'about',

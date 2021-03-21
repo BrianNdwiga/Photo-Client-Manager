@@ -1,0 +1,204 @@
+<template name="funerals">
+    <body style=" background-color:#faf3e6;">
+      <div class="layout">
+        <br>
+        <nav class="breadcrumb" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Overview</a></li>
+              <li class="breadcrumb-item"><a href="/albums">Albums</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Funerals</li>
+            </ol>
+          </nav>
+          <br>
+        <div class="title">Funerals</div>
+        <div class="imageGallery">
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=1035"
+            onclick="handlers.open('1')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=1023"
+            onclick="handlers.open('2')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=1019"
+            onclick="handlers.open('3')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=967"
+            onclick="handlers.open('4')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=930"
+            onclick="handlers.open('5')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=923"
+            onclick="handlers.open('6')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=648"
+            onclick="handlers.open('7')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=613"
+            onclick="handlers.open('8')"
+          />
+          <img
+            class="image"
+            src="https://picsum.photos/300?image=531"
+            onclick="handlers.open('9')"
+          />
+        </div>
+      </div>
+      <div id="modalHolder"></div>
+    
+      <script>
+        var modal = {
+          modalHolder: document.getElementById("modalHolder"),
+          box: document.createElement("div"),
+          boxPhoto: document.createElement("img"),
+          closeButton: document.createElement("span"),
+          openModal: function (source) {
+            this.modalHolder.appendChild(this.box);
+            this.box.appendChild(this.boxPhoto);
+            this.box.appendChild(this.closeButton);
+    
+            this.closeButton.textContent = "x";
+            this.boxPhoto.src = source;
+    
+            this.box.className = "modal";
+            this.closeButton.className = "closeButton";
+            this.modalHolder.className = "modalHolder";
+            this.boxPhoto.className = "boxPhoto";
+    
+            this.closeButton.addEventListener("click", handlers.close);
+          },
+          closeModal: function () {
+            this.modalHolder.innerHTML = "";
+            this.modalHolder.className = "";
+          },
+        };
+    
+        var handlers = {
+          open: function (n) {
+            var imageSource = document.getElementsByTagName("img")[n].src;
+            modal.openModal(imageSource);
+          },
+          close: function () {
+            modal.closeModal();
+          },
+        };
+      </script>
+      <style>
+        /* weddings */
+    
+        @import url("https://fonts.googleapis.com/css?family=Sofia");
+        body {
+          width: 100%;
+          margin: 0 auto;
+        }
+    
+        .layout {
+          display: grid;
+          grid-template: 20px 40px auto / auto 300px 300px 300px auto;
+          grid-gap: 10px;
+        }
+    
+        .title {
+          grid-column: 2 / span 1;
+          grid-row: 2 / span 1;
+          font-size: 3em;
+          font-family: "Sofia", cursive;
+        }
+    
+        .imageGallery {
+          display: grid;
+          grid-template: repeat(3, 300px) / repeat(3, 300px);
+          grid-gap: 10px;
+          margin: 50px 50px 50px 50px;
+          align-content: center;
+          justify-content: center;
+          grid-column: 2 / span 3;
+          grid-row: 3 / span 1;
+        }
+    
+        img {
+          cursor: pointer;
+        }
+    
+        .modal {    
+          width: fit-content;
+          height: 400px;
+          position: fixed;
+          z-index: 10;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background-color: white;
+          padding: 25px 25px 25px 25px;
+          display: grid;
+          grid-template: 320px 50px / 320px;
+        }
+    
+        .modalHolder {
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 100;
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+    
+        .boxPhoto {
+          width: 320px;
+        }
+    
+        .closeButton {
+          grid-row: 2 / span 1;
+          grid-column: 1 / span 1;
+          text-align: right;
+          font-size: 2em;
+          font-family: "Arial Black";
+          cursor: pointer;
+        }
+    
+        @media (max-width: 950px) {
+          .imageGallery {
+            grid-template: repeat(5, 300px) / repeat(2, 300px);
+            grid-column: 2 / span 2;
+          }
+          .layout {
+            grid-template: 20px 40px auto / auto 300px 300px auto;
+          }
+        }
+    
+        @media (max-width: 500px) {
+          .imageGallery {
+            grid-template: repeat(9, 300px) / 300px;
+            grid-column: 2 / span 1;
+          }
+          .layout {
+            grid-template: 20px 40px auto / auto 300px auto;
+          }
+        }
+    
+        /* breadcrumb */
+     .breadcrumb{
+      background-color:#faf3e6;
+        font-size: 2rem;
+        font-family: "Sofia", cursive;
+     }
+      </style>
+    </body>
+    </template>
