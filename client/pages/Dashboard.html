@@ -1,8 +1,90 @@
 <template name="Dashboard">
-    <!-- {{#if admin}} this uses the helper-->
-    {{#if isInRole 'admin'}}
-    <h1 class="page-title">Dashboard</h1>
-    {{else}}
-    <h1>Not Authorized</h1>
-    {{/if}}
+  <h1 class="page-title">Overview</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="display: flex">
+            <div class="col-8">
+              <p class="card-text">
+                7 Albums
+              </p>
+            </div>
+            <div class="col-4">
+              <a href="#" class="btn btn-success dashbtn">Add Images</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="display: flex" class="col">
+            <div class="col-8">
+              <p class="card-text">
+               99 Images
+              </p>
+            </div>
+            <div class="col-4">
+              <a href="#" class="btn dashbtn" style=" background-color: #B69760;">Add Album</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<h1 style="text-align:center;">Contact Form Responses</h1>
+<br>
+<div>
+  
+  <table class="{{editMode}}" >
+    <tr>
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Respond</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td><a href="#">Email</a></td>
+    </tr>
+    <tr>
+      <td scope="row">2</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td><a href="#">Email</a></td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td>Larry the Bird</td>
+      <td>Thorn</td>
+      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td><a href="#">Email</a></td>
+    </tr>
+</table>
+
+</div>
+  <style>
+    a{
+      font-size: 16px;
+    }
+    .dashbtn{
+      width: 100%;border-radius: 0.8em;
+              padding: 10px;
+    }
+    .card-body {
+    flex: 1 1 auto;
+    padding: 3rem 1rem;
+    }
+    .card-text{
+      font-size: x-large;
+    }
+  </style>
 </template>
