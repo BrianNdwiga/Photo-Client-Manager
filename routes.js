@@ -6,14 +6,6 @@ FlowRouter.route('/', {
     }
 });
 
-// Home Page
-FlowRouter.route('/dashboard', {
-    name: 'dashboard',
-    action() {
-        BlazeLayout.render("AppLayout", { main: "Dashboard" });
-    }
-});
-
 // Albums Page
 FlowRouter.route('/albums', {
     name: 'albums',
@@ -93,3 +85,35 @@ adminRoutes.route('/users', {
             BlazeLayout.render("AppLayout", { main: "Users" });
         }
     }) //gets
+
+// Dashboard Page
+FlowRouter.route('/dashboard', {
+    name: 'dashboard',
+    action() {
+        BlazeLayout.render("AppLayout", { main: "Dashboard" });
+    }
+});
+
+// dashboard add pictures
+FlowRouter.route('/dashboard/addPictures', {
+    name: 'addPictures',
+    action() {
+        BlazeLayout.render("AppLayout", { main: "addPictures" });
+    }
+});
+
+// dashboard add albums
+FlowRouter.route('/dashboard/addAlbums', {
+    name: 'addAlbums',
+    action() {
+        BlazeLayout.render("AppLayout", { main: "addAlbums" });
+    }
+});
+
+// dashboard all images
+FlowRouter.route('/dashboard/allImages', {
+    name: 'editImages',
+    action() {
+        BlazeLayout.render("AppLayout", { main: "editImages" });
+    }
+});

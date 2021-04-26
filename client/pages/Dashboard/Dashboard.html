@@ -1,7 +1,7 @@
 <template name="Dashboard">
   <h1 class="page-title">Overview</h1>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <div class="card">
         <div class="card-body">
           <div style="display: flex">
@@ -11,23 +11,39 @@
               </p>
             </div>
             <div class="col-4">
-              <a href="#" class="btn btn-success dashbtn">Add Images</a>
+              <a href="/dashboard/addPictures" class="btn btn-success dashbtn">Add Images</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <div class="card">
         <div class="card-body">
           <div style="display: flex" class="col">
             <div class="col-8">
               <p class="card-text">
-               99 Images
+               9 Albums
               </p>
             </div>
             <div class="col-4">
-              <a href="#" class="btn dashbtn" style=" background-color: #B69760;">Add Album</a>
+              <a href="/dashboard/addAlbums" class="btn dashbtn" style=" background-color: #B69760;">Add Album</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <div style="display: flex" class="col">
+            <div class="col-8">
+              <p class="card-text">
+               45 Images
+              </p>
+            </div>
+            <div class="col-4">
+              <a href="/dashboard/allImages" class="btn dashbtn" style=" background-color: #19283f; color: white;">View all Images</a>
             </div>
           </div>
         </div>
