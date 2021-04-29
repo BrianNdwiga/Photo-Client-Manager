@@ -38,7 +38,18 @@
       
         <section class="questions-section">
           <div class="container">
+            {{#if currentUser}}
               {{> contactForm}}
+              {{else}}
+          <br>
+              <div class="bg-text">
+                <h1>Hold up, please Login first before contacting me</h1>
+                <button id="logPrompt" >Login/Sign-up</button>
+              </div>
+                <div class="container bg-image">
+                  {{> contactForm}}
+                </div>
+              {{/if}}
           </div>
         </section>
       
@@ -57,46 +68,46 @@
       </div>
         </footer>
     </div>
-        <style>
-          /* about me */
-          h5{
-              font-size: 1em;
-          }
-          .masthead-heading,
+    <style>
+      /* about me */
+      h5{
+          font-size: 1em;
+      }
+      .masthead-heading,
 .masthead-intro,
 .content-footer {
-  text-align: center;
+text-align: center;
 }
 
 .masthead {
-  padding: 11em 0;
-  background-image: url('https://images.unsplash.com/photo-1512716679859-da19b4af9c38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center
+padding: 11em 0;
+background-image: url('https://images.unsplash.com/photo-1512716679859-da19b4af9c38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top center
 }
 
 .masthead-intro {
-  /* Text Declarations */
-  margin-bottom: 0.1em;
-  font-family: "Gentium Book Basic," Georgia, serif;
-  font-size: 4em;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+/* Text Declarations */
+margin-bottom: 0.1em;
+font-family: "Gentium Book Basic," Georgia, serif;
+font-size: 4em;
+color: #FFFFFF;
+text-transform: uppercase;
+letter-spacing: .08em;
 }
 
 
 .masthead-heading {
-  /*Layout Declarations */
-  margin-top: -0.2em;
-  /* Typography Declarations */
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: light;
-  font-size: 1.5em;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: #FFFFFF;
+/*Layout Declarations */
+margin-top: -0.2em;
+/* Typography Declarations */
+font-family: "Open Sans", "Helvetica Neue", sans-serif;
+font-weight: light;
+font-size: 1.5em;
+letter-spacing: -0.01em;
+text-transform: uppercase;
+color: #FFFFFF;
 }
 
 /* Text Declarations for Sections */
@@ -105,8 +116,8 @@
 .location-section > p,
 .content-footer > p,
 .questions-section > p {
-  font-weight: 300;
-  letter-spacing: 0.05em;
+font-weight: 300;
+letter-spacing: 0.05em;
 }
 
 /* Section Styling */
@@ -116,78 +127,111 @@
 .questions-section {
 text-align: justify;
 font-size: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
+margin-left: auto;
+margin-right: auto;
+margin-top: 2em;
 }
 
 .questions-section > h2 {
-  /*Typography Declarations */
-  font-family: "Gentium Book Basic", Georgia, serif;
-  font-size: 1.1 em;
-  font-weight: bold;
-  color: #222222;
+/*Typography Declarations */
+font-family: "Gentium Book Basic", Georgia, serif;
+font-size: 1.1 em;
+font-weight: bold;
+color: #222222;
 }
 
 /* Footer Styling */
 
 .fa-stack fa-lg {
-  display: inline-block;
+display: inline-block;
 }
 
 .footer-container > p {
-  color: white;
+color: white;
 }
 
 .content-footer {
-  padding: 2em 0;
-  margin-top: 3em;
-  background: #2b3840;
+padding: 2em 0;
+margin-top: 3em;
+background: #2b3840;
 }
 
 a {
-  text-decoration: none;
-  font-weight: bold;
+text-decoration: none;
+font-weight: bold;
 }
 
 a:link {
-  color: #B69760;
+color: #B69760;
 }
 
 
 @media only screen and (max-width: 571px) {
-    .masthead {
-        padding: 5em 0;
-    }
-    .masthead-intro {
-        font-size: 3em;
-    }
-    .masthead-heading {
-        font-size: .5em;
-    }
-    .container {
-        padding: 0 3em;
-    }
-    .footer-container {
-        padding: 0 3em;
-  }
+.masthead {
+    padding: 5em 0;
+}
+.masthead-intro {
+    font-size: 3em;
+}
+.masthead-heading {
+    font-size: .5em;
+}
+.container {
+    padding: 0 3em;
+}
+.footer-container {
+    padding: 0 3em;
+}
 }
 #sidebar {
-  /* margin-top: 6.5%; */
-  display: flex;
-  
-  
+/* margin-top: 6.5%; */
+display: flex;
+
+
 }
 #sidebar img{
-    width: 100%;
-  top: 1px;
-  height: 100%;
-  max-height: 440px;
-  position: relative;
-  margin-left: 8%;
+width: 100%;
+top: 1px;
+height: 100%;
+max-height: 440px;
+position: relative;
+margin-left: 8%;
 }
 .baguetteBox-overlay{
-  visibility: hidden;
+visibility: hidden;
 }
-        </style>
+
+/* blurred effect */
+.bg-image {
+/* Add the blur effect */
+filter: blur(8px);
+-webkit-filter: blur(8px);
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.bg-text {
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+position: absolute;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 80%;
+padding: 20px;
+text-align: center;
+}
+#logPrompt{
+border-radius: 0.8em;
+cursor: pointer; font-size: 16px;
+}
+    </style>
+        <script>
+          $(function(){$("#logPrompt").click(function(){$("html,body").animate({scrollTop:$(".login-toggle").offset().top},"1000");return false})})
+        </script>
 </template>

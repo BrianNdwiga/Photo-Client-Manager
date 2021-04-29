@@ -251,6 +251,7 @@ table.edit-mode {
 /* accounts */
 
 .login-modal {
+    border-radius: 0.8em;
     position: fixed;
     border: 1px #0d6efd;
     top: 20%;
@@ -269,9 +270,9 @@ table.edit-mode {
 }
 
 .login-modal.open {
+    position: relative;
     opacity: 1;
     transform: translateX(-50%) scale(1);
-    position: relative;
 }
 
 .login-modal h3 {

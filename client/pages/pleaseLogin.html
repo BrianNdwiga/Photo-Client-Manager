@@ -1,0 +1,44 @@
+<template name="pleaseLogin">
+    <div class="middle">
+      <h1>Hold Up, Please Login to continue</h1>
+    </div>
+    <br>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "montserrat", sans-serif;
+        background: url(https://cdn.wallscloud.net/converted/2305230990-rozovie-gori-LBJD-1920x1200-MM-100.jpg)
+          no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+  
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      .middle h1 {
+        font-size: 70px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: #a7abaf82;
+        background-image: url(https://stoleshnica-fasad.ru/wp-content/uploads/2016/03/Panel-iz-stekla-dlya-kukhni-panoramy-prirody-art.-0003-600x190.jpg);
+        -webkit-background-clip: text;
+        animation: water 15s infinite;
+      }
+  
+      @keyframes water {
+        from {
+          background-position: left 0 top 0;
+        }
+  
+        to {
+          background-position: left 1000px top 0;
+        }
+      }
+    </style>
+  </template>

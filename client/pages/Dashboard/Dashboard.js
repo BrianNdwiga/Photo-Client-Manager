@@ -1,7 +1,11 @@
-// Template.Dashboard.helpers({
-//     admin: function() {
-//         // return the outcome of the user
-//         return Role.userInRole(Meteor.userId(), 'admin')
-//             // will check if user is admin if not return false
-//     }
-// })
+// clients
+Template.Dashboard.helpers({
+    clients: function() {
+        return Clients.find({}, { sort: { createdAt: -1 } });
+    }
+});
+Template.Dashboard.events({
+    'click .js-del': function() {
+        Clients.remove(this._id);
+    }
+});

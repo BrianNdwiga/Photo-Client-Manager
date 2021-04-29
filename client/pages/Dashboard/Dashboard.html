@@ -7,7 +7,7 @@
           <div style="display: flex">
             <div class="col-8">
               <p class="card-text">
-                7 Albums
+                7 Images
               </p>
             </div>
             <div class="col-4">
@@ -61,29 +61,23 @@
         <th>Full Name</th>
         <th>Email</th>
         <th>Message</th>
-        <th>Respond</th>
+        <th>Actions</th>
     </tr>
+    {{#each clients}}
     <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td><a href="#">Email</a></td>
+      <td>{{_id}}</td>
+      <td>{{FullName}}</td>
+      <td onclick="email()" id="email" title='To Respond click email' >{{Email}}</td>
+      <td>{{Message}}</td>
+      <td>
+        <button class="btn btn-danger js-del">
+          <i
+        class="fa fa-trash"
+        aria-hidden="true"
+      ></i>
+        </button></td>
     </tr>
-    <tr>
-      <td scope="row">2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td><a href="#">Email</a></td>
-    </tr>
-    <tr>
-      <td scope="row">3</td>
-      <td>Larry the Bird</td>
-      <td>Thorn</td>
-      <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td><a href="#">Email</a></td>
-    </tr>
+    {{/each}}
 </table>
 
 </div>
@@ -102,5 +96,14 @@
     .card-text{
       font-size: x-large;
     }
+    #email{
+      color:#B69760; 
+      cursor: pointer;
+    }
   </style>
+  <script>
+      function email(){
+    window.open('mailto:{{Email}}?subject=subject&body=body');
+  };
+  </script>
 </template>
