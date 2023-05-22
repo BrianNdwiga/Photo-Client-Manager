@@ -17,6 +17,6 @@
     },
     "homepage": "https://github.com/BrianNdwiga/Photo-Client-Manager#readme",
     "dependencies": {
-        "moment": "^2.29.1"
+        "moment": "^2.29.4"
     }
 }
